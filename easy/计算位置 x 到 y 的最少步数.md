@@ -54,20 +54,26 @@ AB 实验同学每天都很苦恼如何可以更好地进行 AB 实验，每一�
 ## 代码
 
 ```cpp
-#include <iostream>
-
-int solution(int xPosition, int yPosition) {
-    // Please write your code here
-    return -2;
-}
-
-int main() {
-    //  You can add more test cases here
-    std::cout << (solution(12, 6) == 4) << std::endl;
-    std::cout << (solution(34, 45) == 6) << std::endl;
-    std::cout << (solution(50, 30) == 8) << std::endl;
-    return 0;
-}
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+	int x,y;
+	 while(cin>>x>>y)
+	 {
+	 	if(x>y)swap(x,y);
+	 	int ans=0,diff,f=1;
+	 	diff=y-x-1;
+	 	while(diff>f*f)
+	 	f++;
+	 	f-=1;
+	 	ans=f*2-1;
+	 	if(diff>f*f+f)ans+=2;
+	 	if(f*f<diff<=f*f+f)ans+=1;
+	 	cout<<ans<<endl;
+	} 
+	return 0;
+}     
 ```
 
 ```js
