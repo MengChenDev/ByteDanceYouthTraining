@@ -34,6 +34,8 @@
   - [x] CPP
 - [x] 字符串有多少种可能性
   - [x] CPP
+- [x] RGB 色值转 Integer
+  - [x] JS
 
 
 

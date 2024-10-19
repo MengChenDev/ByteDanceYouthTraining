@@ -22,6 +22,14 @@
 
 ## 思路
 
+rgb分别对应HEX中的第12、34、56位字符，例如255，254，253即为FF FE FA
+
+了解HEX格式字符串组成后题目就变得很简单了
+
+	1. 将输入的rgb分别转换为16进制
+	1. 将三个字符串拼接
+	1. 将得到的HEX转换为数值
+
 ## 代码
 
 ```cpp
@@ -45,7 +53,29 @@ int main() {
 ```js
 function solution(rgb) {
   // Please write your code here
-  return -2;
+
+  // 使用正则表达式提取RGB值
+  let match = rgb.match(/\((\d+),\s*(\d+),\s*(\d+)\)/);
+
+  // 提取颜色分量并转换为整数
+  const r = parseInt(match[1], 10);
+  const g = parseInt(match[2], 10);
+  const b = parseInt(match[3], 10);
+
+  function rgbToHex(r, g, b) {
+    // 使用toString(16)将每个颜色分量转换为十六进制，并使用padStart确保每个分量至少有两位
+    const hexR = r.toString(16).padStart(2, '0');
+    const hexG = g.toString(16).padStart(2, '0');
+    const hexB = b.toString(16).padStart(2, '0');
+
+    // 将三个十六进制颜色合并成一个字符串
+    const hexColor = `${hexR}${hexG}${hexB}`;
+
+    return hexColor;
+  }
+
+  //返回10进制颜色值
+  return parseInt(rgbToHex(r, g, b), 16);
 }
 
 function main() {
