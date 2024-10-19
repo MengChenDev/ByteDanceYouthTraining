@@ -38,21 +38,15 @@ AB 实验同学每天都很苦恼如何可以更好地进行 AB 实验，每一�
 
 ## 思路
 
-对于这道题，我们的目标是找到从一个整数位置 `x` 走到另一个整数位置 `y` 的最少步数。
+对于这道题，要使步数最小，易知当最大步长尽可能大时可得到最小步数，又由于第一步和最后一步都为 1 ，且每步长度变化为-1~1，此时可视为步长为对称的，故可得以下解题步骤：
 
-首先理解问题，我们要通过一系列步长为 `-1`、`0`、`1` 的步骤来实现从 `x` 到 `y` 的移动，且第一步和最后一步步长必须为 `1`。
-
-数据结构方面，由于我们主要是进行数值的计算和比较，不需要特别复杂的数据结构。
-
-算法步骤可以这样考虑：
-1. 计算 `x` 和 `y` 的差值 `diff = y - x`。
-2. 初始化步数 `step = 0` 和当前位置 `currentPosition = x`。
-3. 从 `1` 开始逐步增加步长，直到当前位置超过或等于 `y`。
-    - 如果当前位置加上步长小于 `y`，则增加步长并更新当前位置，步数加 `1`。
-    - 如果当前位置加上步长大于 `y`，则将步长减 `1`，继续尝试。
+1. 计算`distance = y - x`
+2. 对距离除以二得到一半距离
+3. 由于前半部分步长依次+1，故可再除以2再向上取整得到一半步数最后再乘二返回答案
 
 ## 代码
 
+### 解法一
 ```cpp
 #include <bits/stdc++.h>
 using namespace std;
@@ -90,4 +84,36 @@ function main() {
 }
 
 main();
+```
+
+### 解法二
+
+```cpp
+int solution(int xPosition, int yPosition) {
+    // Please write your code here
+    long d=abs(xPosition-yPosition);
+    long tmp=0;
+    long i=1;
+    long flag=1;
+    while(d>tmp){
+        tmp+=i;
+//        printf("flag%d  tmp%d    ",flag,tmp); 
+        if(d<=tmp) break;
+        flag++;        
+        tmp+=i;
+//        printf("flag%d  tmp%d    ",flag,tmp); 
+        if(d<=tmp) break;
+        flag++;
+        i++;
+    }
+    return flag;
+}
+
+int main() {
+    //  You can add more test cases here
+    std::cout << (solution(12, 6) == 4) << std::endl;
+    std::cout << (solution(34, 45) == 6) << std::endl;
+    std::cout << (solution(50, 30) == 8) << std::endl;
+    return 0;
+}
 ```
