@@ -116,3 +116,17 @@ function main() {
 main();
 ```
 
+```python
+def solution(dna):
+    n = len(dna)
+    minDNA = dna
+
+    # 生成所有旋转表示并比较
+    for i in range(1, n):
+        current = dna[i:] + dna[:i]
+        if current < minDNA:
+            minDNA = current
+
+    return minDNA
+```
+

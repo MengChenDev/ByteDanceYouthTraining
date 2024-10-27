@@ -19,6 +19,7 @@
 - [x] 环状 DNA 序列整理
   - [x] CPP
   - [x] JS
+  - [x] Python
 - [x] 计算位置 x 到 y 的最少步数
   - [x] CPP
 - [x] 徒步 1
