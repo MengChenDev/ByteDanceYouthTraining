@@ -52,7 +52,8 @@
 - [x] RGB 色值转 Integer
   - [x] JS
   - [x] Python
-
+- [x] SQL代码补全功能
+  - [x] Python
 
 
 ## 困难
