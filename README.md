@@ -4,9 +4,11 @@
 
 - [x] 创意标题匹配
   - [x] CPP
+  - [x] Python
 - [x] 叠盘子
   - [x] JS
-
+  - [x] Python
+  
 - [x] 多米诺骨牌
   - [x] CPP
   - [x] JS
