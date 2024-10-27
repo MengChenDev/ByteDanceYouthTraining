@@ -117,3 +117,30 @@ int main() {
     return 0;
 }
 ```
+
+```python
+def solution(xPosition, yPosition):
+    if xPosition == yPosition:
+        return 0
+    
+    d = abs(xPosition - yPosition)
+    tmp = 0
+    i = 1
+    flag = 1
+    
+    while d > tmp:
+        tmp += i
+        if d <= tmp:
+            break
+        flag += 1
+        
+        tmp += i
+        if d <= tmp:
+            break
+        flag += 1
+        
+        i += 1
+    
+    return flag
+```
+

@@ -22,6 +22,7 @@
   - [x] Python
 - [x] 计算位置 x 到 y 的最少步数
   - [x] CPP
+  - [x] Python
 - [x] 徒步 1
   - [x] CPP
 - [x] 完美整数
