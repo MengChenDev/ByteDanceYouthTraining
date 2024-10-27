@@ -44,6 +44,7 @@
   - [x] CPP
 - [x] RGB 色值转 Integer
   - [x] JS
+  - [x] Python
 
 
 

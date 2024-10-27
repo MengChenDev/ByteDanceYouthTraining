@@ -87,3 +87,34 @@ function main() {
 
 main();
 ```
+
+```python
+def solution(rgb):
+    import re
+    # 使用正则表达式提取RGB值
+    match = re.match(r'rgb\((\d+),\s*(\d+),\s*(\d+)\)', rgb)
+    
+    if match is None:
+        # 处理匹配失败的情况，例如返回0或抛出异常
+        return 0
+    
+    # 提取颜色分量并转换为整数
+    r = int(match.group(1))
+    g = int(match.group(2))
+    b = int(match.group(3))
+    
+    def rgb_to_hex(r, g, b):
+        # 使用format将每个颜色分量转换为十六进制，并确保每个分量至少有两位
+        hex_r = format(r, '02x')
+        hex_g = format(g, '02x')
+        hex_b = format(b, '02x')
+        
+        # 将三个十六进制颜色合并成一个字符串
+        hex_color = f'{hex_r}{hex_g}{hex_b}'
+        
+        return hex_color
+    
+    # 返回10进制颜色值
+    return int(rgb_to_hex(r, g, b), 16)
+```
+
