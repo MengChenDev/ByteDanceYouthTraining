@@ -33,6 +33,9 @@
   - [x] Python
 - [x] 找单独的数
   - [x] Python
+- [x] 二进制反码转换问题
+  - [x] Python
+
 
 
 
