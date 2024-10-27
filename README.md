@@ -27,6 +27,7 @@
   - [x] CPP
 - [x] 完美整数
   - [x] JS
+  - [x] Python
 - [x] DNA 序列还原
   - [x] CPP
 
