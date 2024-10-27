@@ -31,6 +31,9 @@
 - [x] DNA 序列还原
   - [x] CPP
   - [x] Python
+- [x] 找单独的数
+  - [x] Python
+
 
 
 
