@@ -30,6 +30,7 @@
   - [x] Python
 - [x] DNA 序列还原
   - [x] CPP
+  - [x] Python
 
 
 

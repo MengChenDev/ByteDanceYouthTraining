@@ -115,3 +115,28 @@ function main() {
 
 main();
 ```
+
+```python
+def solution(dna1, dna2):
+    n = len(dna1)
+    m = len(dna2)
+    dp = [[0] * (m + 1) for _ in range(n + 1)]
+    
+    # dp[x][y] 代表将 dna1 的前 x 个字符修改成 dna2 的前 y 个字符所需的最小操作数
+    for i in range(1, m + 1):
+        dp[0][i] = i
+    for i in range(1, n + 1):
+        dp[i][0] = i
+    
+    for i in range(1, n + 1):
+        for j in range(1, m + 1):
+            one = dp[i-1][j] + 1
+            two = dp[i][j-1] + 1
+            three = dp[i-1][j-1]
+            if dna1[i-1] != dna2[j-1]:
+                three += 1
+            dp[i][j] = min(one, two, three)
+    
+    return dp[n][m]
+```
+
