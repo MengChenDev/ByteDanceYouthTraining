@@ -15,6 +15,7 @@
   - [x] Python
 - [x] 和为偶数的数字组合
   - [x] JS
+  - [x] Python
 - [x] 环状 DNA 序列整理
   - [x] CPP
   - [x] JS
