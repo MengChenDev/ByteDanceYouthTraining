@@ -62,4 +62,4 @@
   - [x] JS
   - [x] Python
 - [x] 进制求和转换
-  - [x] CPP
+  - [x]  CPP
